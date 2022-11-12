@@ -2,15 +2,45 @@
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
-  <title>CodePen - Points (color, animation, rotation.order)</title>
+  <title>Anh Yêu Em 🥰</title>
   <link rel="stylesheet" href="./style.css">
 
 </head>
 <body>
+
 <!-- partial:index.partial.html -->
 
 <!-- partial -->
+  <div class="background" id="background">
+    <button onclick="play()" id="btn">Nhấn vào đây nè pé iu 🥰</button>
+  </div>
   <script type="module" src="./script.js"></script>
+  <audio autoplay loop id="musicplayer">
+    <source src="./music.mp3" type="audio/mpeg">
+  </audio>
 
+  <script>
+    const play = () => {
+      let music = document.getElementById("musicplayer");
+      let button = document.getElementById("btn");
+      let background = document.getElementById("background");
+
+      music.volume = 0;
+      music.play();
+
+      setInterval(() => {
+        if(music.volume <= .9) music.volume += .1;
+      }, 252);
+
+      button.classList.add("hide");
+
+      background.classList.add("visible");
+      background.classList.add("blur");
+
+      setTimeout(() => {
+        background.classList.add("hide");
+      }, 5000);
+    }
+  </script>
 </body>
 </html>
