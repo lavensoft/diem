@@ -15,8 +15,8 @@
     <button onclick="play()" id="btn">Nhấn vào đây nè pé iu 🥰</button>
   </div>
   <script type="module" src="./script.js"></script>
-  <audio autoplay loop id="musicplayer">
-    <source src="./music.mp3" type="audio/mpeg">
+  <audio id="musicplayer">
+    <source src="https://orios-server.lavenes.com/uploads/music.mp3" type="audio/mpeg">
   </audio>
 
   <script>
@@ -29,7 +29,7 @@
       music.play();
 
       setInterval(() => {
-        if(music.volume <= .9) music.volume += .1;
+        if(music.volume <= .9) music.volume += .05;
       }, 252);
 
       button.classList.add("hide");
